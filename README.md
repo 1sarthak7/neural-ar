@@ -32,6 +32,7 @@ The engine interprets hand gestures to trigger specific shader pipelines.
 | **Fist ✊** | 🔴 **System Failure** | Heavy static noise and "access denied" red interference. | `Perlin Noise`, `Grain`, `Color Grading` |
 | **Passive** | 🔆 **Cinematic** | Always-on effects to unify the look. | `Unreal Bloom`, `Vignette`, `Film Grain` |
 
+<div align="center">
 ## 🛠️ SHADER ARCHITECTURE
 
 The rendering pipeline is built on a modular stack:

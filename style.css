@@ -1,0 +1,67 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* STARTUP OVERLAY */
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.hud-container {
+  text-align: center;
+  border: 1px solid #0ff;
+  padding: 40px;
+  box-shadow: 0 0 20px #0ff;
+}
+
+h1 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+  letter-spacing: 5px;
+}
+
+button {
+  background: transparent;
+  border: 1px solid #0ff;
+  color: #0ff;
+  padding: 15px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0ff;
+  color: black;
+  box-shadow: 0 0 15px #0ff;
+}
+
+/* HIDE RAW WEBCAM */
+#webcam {
+  display: none;
+}
+
+/* MAIN CANVAS (Mirrored for natural feel) */
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  transform: scaleX(-1); 
+}

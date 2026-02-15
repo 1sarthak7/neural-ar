@@ -1,56 +1,63 @@
-# 🔮 Neural AR Engine
+<div align="center">
 
-> A real-time, browser-based Augmented Reality video effects engine powered by MediaPipe and Three.js.
-> **Designed & Built by [Sarthak Bhopale](https://github.com/1sarthak7)**
+# 🔮 NEURAL AR ENGINE
 
-![Project Banner](https://img.shields.io/badge/Status-Live-success?style=for-the-badge) 
-[![Live Demo](https://img.shields.io/badge/DEMO-LAUNCH_SYSTEM-00f7ff?style=for-the-badge&logo=google-chrome&logoColor=black)](https://1sarthak7.github.io/neural-ar/)
+> **A real-time, browser-based Augmented Reality video effects engine.** > Powered by MediaPipe, Three.js, and Custom GLSL Shaders.
 
-## ⚡ Overview
+[![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge&logo=statuspage&logoColor=white)](https://1sarthak7.github.io/neural-ar/)
+[![Version](https://img.shields.io/badge/Version-4.0-blue?style=for-the-badge&logo=git&logoColor=white)](https://github.com/1sarthak7/neural-ar)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
-This project is a sophisticated AR experiment that uses **Computer Vision (MediaPipe)** to track hands in real-time and maps **WebGL Shaders (GLSL)** to the video feed. It features a custom post-processing pipeline that blends digital artifacts with physical reality.
+[**LAUNCH SYSTEM**](https://1sarthak7.github.io/neural-ar/)
 
-**Key Tech Stack:**
-* **Vision:** MediaPipe Hands (Dual-hand tracking)
-* **Graphics:** Three.js (WebGL2 Renderer)
-* **Shaders:** Custom GLSL (Chroma Key, Datamosh, Bloom)
-* **Build:** Vite
+---
 
-## 🎮 Interaction Guide
+### ⚡ OVERVIEW
 
-The system uses specific hand gestures to trigger reality-bending effects.
+This project is a sophisticated AR experiment that blends physical reality with digital artifacts. It uses **Computer Vision (MediaPipe)** to track hands in real-time and maps **WebGL Shaders** to the video feed. The core is a custom post-processing pipeline that handles chroma keying, datamoshing, and holographic compositing entirely on the GPU.
 
-| Gesture | Effect Mode | Description |
-| :--- | :--- | :--- |
-| **Open Hands** | 🔵 **Cyber Glitch** | Standard surveillance mode. Digital noise and scanlines appear between your hands. |
-| **Peace Sign ✌️** | 🟢 **Rain Storm** | Triggers a chroma-keyed rain layer with spatial audio. |
-| **Pinch 👌** | 🟣 **Music Video** | Overlays a music video texture blended holographically over your face. |
-| **Fist ✊** | 🔴 **System Failure** | Heavy static noise and "access denied" red interference. |
+</div>
 
-## 🚀 How to Run Locally
+## 🎮 GESTURE CONTROL & EFFECTS
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/1sarthak7/neural-ar.git](https://github.com/1sarthak7/neural-ar.git)
-    cd neural-ar
-    ```
+The engine interprets hand gestures to trigger specific shader pipelines.
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+| Gesture | Mode Name | Visual Effect | Shader Tech Used |
+| :--- | :--- | :--- | :--- |
+| **Open Hands** | 🔵 **Cyber Glitch** | Digital noise, RGB splitting, and scanlines appear between hands. | `Datamosh`, `Chromatic Aberration`, `Scanlines` |
+| **Peace Sign ✌️** | 🟢 **Rain Storm** | A chroma-keyed rain layer with spatial audio and brightness boost. | `Chroma Key (Green Screen)`, `Luma Boost`, `Alpha Blending` |
+| **Pinch 👌** | 🟣 **Holo-Music** | Overlays a music video texture blended holographically over your face. | `UV Flipping`, `Screen Blend Mode`, `Texture Mapping` |
+| **Fist ✊** | 🔴 **System Failure** | Heavy static noise and "access denied" red interference. | `Perlin Noise`, `Grain`, `Color Grading` |
+| **Passive** | 🔆 **Cinematic** | Always-on effects to unify the look. | `Unreal Bloom`, `Vignette`, `Film Grain` |
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+## 🛠️ SHADER ARCHITECTURE
 
-## 🛠️ Architecture
+The rendering pipeline is built on a modular stack:
 
-* **`main.js`**: Core loop handling video inputs and audio triggers.
-* **`gestureEngine.js`**: Math utility that converts raw landmark data into stabilized control signals (pinch strength, box area).
-* **`postProcessing.js`**: Manages the `EffectComposer` stack (Bloom + Custom Shaders).
-* **`surveillanceFrag.glsl`**: The "brain" of the visual effects. Contains pixel logic for Glitch, Rain, and Holograms.
+1.  **Input Layer:** `Webcam Feed` + `Video Textures` (Rain/Music)
+2.  **Tracking Layer:** `MediaPipe Hands` (Joint coordinates)
+3.  **Simulation Layer:** `Three.js` Scene (3D Particles)
+4.  **Composition Layer:** `EffectComposer`
+    * **Pass 1:** Base Render
+    * **Pass 2:** `SurveillanceShader` (The "Brain" - Handles Masking & Glitch)
+    * **Pass 3:** `HUDShader` (Draws the Crosshairs)
+    * **Pass 4:** `UnrealBloomPass` (Glow)
+
+## 🚀 HOW TO RUN
+
+```bash
+# 1. Clone the repository
+git clone [https://github.com/1sarthak7/neural-ar.git](https://github.com/1sarthak7/neural-ar.git)
+
+# 2. Enter directory
+cd neural-ar
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the engine
+npm run dev.
+```
 
 ## 👤 Author
 

@@ -23,7 +23,7 @@ async function initSystem() {
 
     // 3. SETUP VIDEOS (Unlocked by User Click)
     rainVideo = document.createElement('video');
-    rainVideo.src = '/rain.mp4'; 
+    rainVideo.src = import.meta.env.BASE_URL + 'rain.mp4';
     rainVideo.loop = true;
     rainVideo.muted = true; // Start muted
     rainVideo.playsInline = true;
@@ -33,7 +33,7 @@ async function initSystem() {
     document.body.appendChild(rainVideo);
     
     musicVideo = document.createElement('video');
-    musicVideo.src = '/music.mp4'; 
+    musicVideo.src = import.meta.env.BASE_URL + 'music.mp4';
     musicVideo.loop = true;
     musicVideo.muted = true; // Start muted
     musicVideo.playsInline = true;

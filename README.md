@@ -18,6 +18,8 @@ This project is a sophisticated AR experiment that blends physical reality with 
 
 </div>
 
+<div align="center">
+
 ## 🎮 GESTURE CONTROL & EFFECTS
 
 The engine interprets hand gestures to trigger specific shader pipelines.
@@ -68,4 +70,5 @@ npm run dev.
   </a>
 </p>
 
+</div>
 </div>

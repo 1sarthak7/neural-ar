@@ -6,7 +6,7 @@
 
 [![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge&logo=statuspage&logoColor=white)](https://1sarthak7.github.io/neural-ar/)
 [![Version](https://img.shields.io/badge/Version-4.0-blue?style=for-the-badge&logo=git&logoColor=white)](https://github.com/1sarthak7/neural-ar)
-[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
+[![License](https://img.shields.io/badge/License-Sarthak-purple?style=for-the-badge)](LICENSE)
 
 [**LAUNCH SYSTEM**](https://1sarthak7.github.io/neural-ar/)
 
